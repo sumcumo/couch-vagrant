@@ -15,15 +15,15 @@ This guide assumes you are running Mac OS X. But it should be the same for any L
 2. Download and install [Vagrant](https://www.vagrantup.com/downloads.html)
 3. Clone this repository
 
-    git clone https://github.com/sumcumo/couch-vagrant.git
+      git clone https://github.com/sumcumo/couch-vagrant.git
 
 4. Change into the directory couch-vagrant
 
-    cd couch-vagrant
+      cd couch-vagrant
 
 5. Run the Vagrantfile
 
-    vagrant up
+      vagrant up
 
 The last step will look for a Vagrant Box at [https://atlas.hashicorp.com/sc-weatherhog/boxes/vagrant-couch/](https://atlas.hashicorp.com/sc-weatherhog/boxes/vagrant-couch/), (don't follow the steps in the README there please), will download it and start three instances.
 
@@ -32,15 +32,15 @@ The last step will look for a Vagrant Box at [https://atlas.hashicorp.com/sc-wea
 
 Connect to each of the three machines with:
 
-  vagrant ssh
+    vagrant ssh
 
 Get the ipaddress with:
 
-  sudo ifconfig
+    sudo ifconfig
 
 Start CouchDB on each box with:
 
-  sudo /opt/couchdb/bin/couchdb couchdb -b
+    sudo /opt/couchdb/bin/couchdb couchdb -b
 
 ## Contributing
 
