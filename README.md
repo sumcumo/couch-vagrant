@@ -12,16 +12,17 @@ we wanted to have three IP adresses.
 This guide assumes you are running Mac OS X. But it should be the same for any Linux system.
 
 1. Download and install [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-2. Download and install [Vagrant](https://www.vagrantup.com/downloads.html)
-3. Clone this repository
+2. Download and install [Virtualbox-Extension-Pack] (http://download.virtualbox.org/virtualbox/5.1.8/Oracle_VM_VirtualBox_Extension_Pack-5.1.8-111374.vbox-extpack)
+3. Download and install [Vagrant](https://www.vagrantup.com/downloads.html) - For the time of writing there is a major bug with Vagrant 1.8.7 so please use 1.8.6 unless you don't care fixing the installation.
+4. Clone this repository
 
         git clone https://github.com/sumcumo/couch-vagrant.git
 
-4. Change into the directory couch-vagrant
+5. Change into the directory couch-vagrant
 
         cd couch-vagrant
 
-5. Run the Vagrantfile
+6. Run the Vagrantfile
 
         vagrant up
 
@@ -29,32 +30,21 @@ The last step will look for a Vagrant Box at [https://atlas.hashicorp.com/sc-wea
 
 ### Configuration
 
-You have to decide to which interface on your local machine the Vagrant boxes will bridge to during the vagrant up command.
+Vagrant will start 3 machines with the IP addresses configured in the Vagrantfile. The IP addresses are for:
 
-    ==> couch1: Available bridged network interfaces:
-    1) en0: Wi-Fi (AirPort)
-    2) en1: Thunderbolt 1
-    3) en2: Thunderbolt 2
-    4) p2p0
-    5) awdl0
-    6) bridge0
-    ==> couch1: When choosing an interface, it is usually the one that is
-    ==> couch1: being used to connect to the internet.
-        couch1: Which interface should the network bridge to? 1
+    couch1 : 172.28.128.111
+    couch2 : 172.28.128.121
+    couch3 : 172.28.128.132
 
-Now get the ip addresses - you will need them for opening each CouchDB webinterface via the browser. The port is always 5984. The names of the machines are: couch1, couch2, couch3
-
-Connect to each of the three machines with:
-
-    vagrant ssh couch1
-
-Get the IP address with:
-
-    sudo ifconfig
-
-Finally, you will have to start CouchDB on each Vagrant box. Simply run:
+You will have to start CouchDB on each Vagrant box by hand. For the start Simply run:
 
     sudo /opt/couchdb/bin/couchdb couchdb -b
+
+CouchDB 2.0.0 will be reachable via port 5984
+
+## Open CouchDB
+
+If you made it to this point, you will now be able top open each running CouchDB and its Webinterface Fauxton in the browser.
 
 ## Contributing
 
@@ -62,4 +52,4 @@ This is a first try. We are really happy about contributions. If you find a prob
 
 ## Thanks
 
-Many thanks to [Lucas](https://github.com/orgs/sumcumo/people/lucasweatherhog) for putting together the Vagrant stuff.
+Many thanks to [Lucas](https://github.com/orgs/sumcumo/people/lucasweatherhog) for putting the Vagrant stuff together.
