@@ -10,19 +10,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
    config.vm.define :couch1 do |couch_config|
-    couch_config.vm.box = "hor"
+    couch_config.vm.box = "sc-weatherhog/vagrant-couch"
     couch_config.vm.host_name = 'couch1.local'
     config.vm.network "public_network", type: "dhcp"
   end
 
     config.vm.define :couch2 do |couch_config|
-    couch_config.vm.box = "hor"
+    couch_config.vm.box = "sc-weatherhog/vagrant-couch"
     couch_config.vm.host_name = 'couch2.local'
     config.vm.network "public_network", type: "dhcp"
   end
 
     config.vm.define :couch3 do |couch_config|
-    couch_config.vm.box = "hor"
+    couch_config.vm.box = "sc-weatherhog/vagrant-couch"
     couch_config.vm.host_name = 'couch3.local'
     config.vm.network "public_network", type: "dhcp"
   end
